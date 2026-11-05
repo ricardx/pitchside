@@ -248,8 +248,8 @@ Each milestone should take about a week of short sessions. Each ends with someth
 ---
 
 ## 10. Current status
-- **Milestone:** 1 — Screens with fake data (not started). Milestone 0 done.
-- **Last session:** 2026-11-05. Created Expo SDK 58 project (Expo Router, routes in `src/app/`), reset to blank, ran on phone with Expo Go, pushed to github.com/ricardx/pitchside.
-- **Next step:** Milestone 1, first task: learn what components/JSX are, then set up tab navigation (Leagues, Games, Profile).
+- **Milestone:** 1 — Screens with fake data (in progress). Milestone 0 done.
+- **Last session:** 2026-11-05. Milestone 0 complete (Expo SDK 58, pushed to github.com/ricardx/pitchside). Milestone 1: tab navigation working (Games = index, Leagues, Profile) via `expo-router/js-tabs` with `Tabs.Screen`; created `src/data/fakeData.ts` with a `Game` type and 3 fake games.
+- **Next step:** (1) `type Game` in fakeData.ts is still not exported — Ricardo fixes that first. (2) Then render the games list on the Games screen: teach `.map()` and the `key` prop.
 
 (Update this at the end of every session.)
