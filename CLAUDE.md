@@ -179,11 +179,11 @@ Explain this design to me before creating it, especially *why* `league_members` 
 Each milestone should take about a week of short sessions. Each ends with something working that I can show. Don't start the next milestone until the current one's checklist is done.
 
 ### Milestone 0 — Setup
-- [ ] Install Node.js, VS Code, Git; create GitHub account; install Expo Go on my phone
-- [ ] Create the Expo project (TypeScript, Expo Router), run it on my phone
-- [ ] Push it to a new GitHub repo
-- [ ] Create `docs/devlog.md`
-- [ ] Walk me through the project's folder structure: what each folder/file is for
+- [x] Install Node.js, VS Code, Git; create GitHub account; install Expo Go on my phone
+- [x] Create the Expo project (TypeScript, Expo Router), run it on my phone
+- [x] Push it to a new GitHub repo
+- [x] Create `docs/devlog.md`
+- [x] Walk me through the project's folder structure: what each folder/file is for
 **I'll learn:** how an Expo project is organized, running an app on my phone, git basics.
 
 ### Milestone 1 — Screens with fake data (no backend)
@@ -248,8 +248,8 @@ Each milestone should take about a week of short sessions. Each ends with someth
 ---
 
 ## 10. Current status
-- **Milestone:** 0 — Setup (not started)
-- **Last session:** —
-- **Next step:** Install the tools and create the Expo project.
+- **Milestone:** 1 — Screens with fake data (not started). Milestone 0 done.
+- **Last session:** 2026-11-05. Created Expo SDK 58 project (Expo Router, routes in `src/app/`), reset to blank, ran on phone with Expo Go, pushed to github.com/ricardx/pitchside.
+- **Next step:** Milestone 1, first task: learn what components/JSX are, then set up tab navigation (Leagues, Games, Profile).
 
 (Update this at the end of every session.)
