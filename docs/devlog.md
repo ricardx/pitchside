@@ -12,3 +12,7 @@ One entry per session: what I built, what I learned, what's next.
 - Learned: _layout.tsx decides how screens show and every screen must be declared with Tabs.Screen; props and the {{ }} syntax; TypeScript types and union types; why ids must be unique; why prices are stored in cents and times in UTC.
 - Debugging: read an Expo error as "what broke → which thing → suggested fix".
 - Next: export the Game type, then show the games as a list on the Games screen (.map() and key).
+## 2026-11-07 — Milestone 1: games list
+- Built: Games screen lists the fake games; formatDate (UTC → local time) and formatPrice (cents → "Free"/"$10.00") helpers; refactored each game into a reusable GameCard component.
+- Learned: .map() turns an array into JSX; key must be unique and goes where .map() is; export vs export default; === over ==; writing my own props with a type; naming things for what they are; a refactor changes structure, not behaviour.
+- Next: tap a GameCard to open the Game detail screen (stack inside tabs, dynamic route game/[id].tsx).

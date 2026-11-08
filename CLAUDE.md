@@ -249,7 +249,8 @@ Each milestone should take about a week of short sessions. Each ends with someth
 
 ## 10. Current status
 - **Milestone:** 1 — Screens with fake data (in progress). Milestone 0 done.
-- **Last session:** 2026-11-05. Milestone 0 complete (Expo SDK 58, pushed to github.com/ricardx/pitchside). Milestone 1: tab navigation working (Games = index, Leagues, Profile) via `expo-router/js-tabs` with `Tabs.Screen`; created `src/data/fakeData.ts` with a `Game` type and 3 fake games.
-- **Next step:** (1) `type Game` in fakeData.ts is still not exported — Ricardo fixes that first. (2) Then render the games list on the Games screen: teach `.map()` and the `key` prop.
+- **Last session:** 2026-11-07. Exported `Game` type; Games screen lists fake games with `.map()` + `key`; wrote `src/utils/formatDate.ts` (UTC → local via `toLocaleString`) and `src/utils/formatPrice.ts` (cents → "Free"/"$10.00"); refactored each game into `src/components/GameCard.tsx` with a typed `game` prop.
+- **Next step:** (1) If not done: remove unused `Text` import in `src/app/index.tsx`, commit the GameCard refactor, push. (2) Tapping a GameCard opens Game detail: teach Stack-inside-Tabs (route group `(tabs)`) and dynamic route `game/[id].tsx`. Verify the Expo Router 58 API first.
+- **Weak spots to revisit:** dollars→cents conversion (answered $7.50 = 7500); skips "quick check" questions sometimes.
 
 (Update this at the end of every session.)
