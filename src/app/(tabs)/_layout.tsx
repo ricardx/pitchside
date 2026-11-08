@@ -1,0 +1,11 @@
+import { Tabs } from "expo-router/js-tabs";
+
+export default function TabsLayout() {
+  return (
+    <Tabs>
+      <Tabs.Screen name="index" options={{ title: "Games" }} />
+      <Tabs.Screen name="leagues" />
+      <Tabs.Screen name="profile" />
+    </Tabs>
+  );
+}

@@ -1,11 +1,10 @@
-import { Tabs } from "expo-router/js-tabs";
+import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
-    <Tabs>
-      <Tabs.Screen name="index" options={{ title: "Games" }} />
-      <Tabs.Screen name="leagues" />
-      <Tabs.Screen name="profile" />
-    </Tabs>
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{headerShown: false}} />
+      <Stack.Screen name="game/[id]" />
+    </Stack>
   );
 }
