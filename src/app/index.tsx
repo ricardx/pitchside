@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 import { games } from "@/data/fakeData";
 import formatDate from "@/utils/formatDate";
+import formatPrice from "@/utils/formatPrice";
 
 export default function Index() {
   return (
@@ -9,6 +10,7 @@ export default function Index() {
         <View key={game.id}>
           <Text>{game.location}</Text>
           <Text>{formatDate(game.startsAt)}</Text>
+          <Text>{formatPrice(game.price)}</Text>
         </View>
       ))}
     </View>
