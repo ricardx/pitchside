@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
 import { games } from "@/data/fakeData";
+import formatDate from "@/utils/formatDate";
 
 export default function Index() {
   return (
@@ -7,7 +8,7 @@ export default function Index() {
       {games.map((game) => (
         <View key={game.id}>
           <Text>{game.location}</Text>
-          <Text>{game.startsAt}</Text>
+          <Text>{formatDate(game.startsAt)}</Text>
         </View>
       ))}
     </View>
