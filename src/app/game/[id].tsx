@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import { games } from "@/data/fakeData";
+import { games, signups, players } from "@/data/fakeData";
 import formatDate from "@/utils/formatDate";
 import formatPrice from "@/utils/formatPrice";
 
@@ -9,11 +9,21 @@ export default function GameScreen() {
     const { id } = useLocalSearchParams<{ id: string }>();
     const game = games.find((g) => g.id === id);
     if (game === undefined) return <Text>Game not found</Text>;
+    const confirmedSignups = signups.filter((s) => s.gameId === id && s.status === "confirmed");
     return (
         <View>
             <Text>{game.location}</Text>
             <Text>{formatDate(game.startsAt)}</Text>
             <Text>{formatPrice(game.price)}</Text>
+            <Text>Confirmed Players:</Text>
+            {
+                confirmedSignups.map((s) => (
+                    <Text key={s.id}>
+                    {players.find((p) => p.id === s.playerId)?.name}
+                    </Text>
+                ))
+
+            }
         </View>
     )
 }

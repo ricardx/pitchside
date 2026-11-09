@@ -249,8 +249,8 @@ Each milestone should take about a week of short sessions. Each ends with someth
 
 ## 10. Current status
 - **Milestone:** 1 — Screens with fake data (in progress). Milestone 0 done.
-- **Last session:** 2026-11-07. Exported `Game` type; Games screen lists fake games with `.map()` + `key`; wrote `src/utils/formatDate.ts` (UTC → local via `toLocaleString`) and `src/utils/formatPrice.ts` (cents → "Free"/"$10.00"); refactored each game into `src/components/GameCard.tsx` with a typed `game` prop.
-- **Next step:** (1) If not done: remove unused `Text` import in `src/app/index.tsx`, commit the GameCard refactor, push. (2) Tapping a GameCard opens Game detail: teach Stack-inside-Tabs (route group `(tabs)`) and dynamic route `game/[id].tsx`. Verify the Expo Router 58 API first.
-- **Weak spots to revisit:** dollars→cents conversion (answered $7.50 = 7500); skips "quick check" questions sometimes.
+- **Last session:** 2026-11-08. Restructured routes: root `Stack` in `src/app/_layout.tsx` (`(tabs)` with `headerShown: false`, `game/[id]` titled "Game") wrapping the tabs in `src/app/(tabs)/`. GameCard is tappable (`Link asChild` + `Pressable`, href `/game/${game.id}`). `src/app/game/[id].tsx` reads `id` with `useLocalSearchParams`, `.find()`s the game (handles not-found), and lists confirmed players by filtering `signups` and joining to `players`. Added `Player` and `Signup` types + fake data (g2 has `playersPerTeam: 2`, 4 confirmed + 2 waitlisted).
+- **Next step:** (1) If not done: commit the detail-screen fixes and push. (2) On game detail: show the waitlist (in `createdAt` order, introduce `.sort()`) and "X spots left" (capacity = 2 × playersPerTeam). (3) Then sign up / drop buttons with `useState` following the signup rules. (4) Fake leagues data still missing.
+- **Weak spots to revisit:** dollars→cents conversion ($7.50 = 750); hooks must be called inside components (put one at file top level); naming variables for what they hold; skips some "quick check" questions (unanswered: if formatPrice changes, how many screens update?).
 
 (Update this at the end of every session.)
