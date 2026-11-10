@@ -10,11 +10,14 @@ export default function GameScreen() {
     const game = games.find((g) => g.id === id);
     if (game === undefined) return <Text>Game not found</Text>;
     const confirmedSignups = signups.filter((s) => s.gameId === id && s.status === "confirmed");
+    const capacity = game.playersPerTeam * 2;
+    const spotsLeft =  capacity - confirmedSignups.length
     return (
         <View>
             <Text>{game.location}</Text>
             <Text>{formatDate(game.startsAt)}</Text>
             <Text>{formatPrice(game.price)}</Text>
+            <Text>{spotsLeft} spots left.</Text>
             <Text>Confirmed Players:</Text>
             {
                 confirmedSignups.map((s) => (
