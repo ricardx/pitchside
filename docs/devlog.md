@@ -16,3 +16,9 @@ One entry per session: what I built, what I learned, what's next.
 - Built: Games screen lists the fake games; formatDate (UTC → local time) and formatPrice (cents → "Free"/"$10.00") helpers; refactored each game into a reusable GameCard component.
 - Learned: .map() turns an array into JSX; key must be unique and goes where .map() is; export vs export default; === over ==; writing my own props with a type; naming things for what they are; a refactor changes structure, not behaviour.
 - Next: tap a GameCard to open the Game detail screen (stack inside tabs, dynamic route game/[id].tsx).
+## 2026-11-08 — Milestone 1: game detail
+- Built: root Stack wrapping the tabs ((tabs) route group); tappable GameCard (Link + Pressable); dynamic route game/[id].tsx that finds the game by id and lists its confirmed players; Player and Signup types with fake data.
+- Learned: dynamic routes ([id]) and route groups ((tabs)); the card sends the id, the screen reads it with useLocalSearchParams; hooks only go inside components; .map vs .find vs .filter; handling undefined with an early return and ?.; why signups are a separate join table (data belongs to "this player in this game").
+- Git: git detects moved files as renames once staged.
+- Next: waitlist (sorted by signup time) and "spots left" on game detail, then sign up / drop buttons with useState.
+
