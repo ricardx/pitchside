@@ -21,4 +21,8 @@ One entry per session: what I built, what I learned, what's next.
 - Learned: dynamic routes ([id]) and route groups ((tabs)); the card sends the id, the screen reads it with useLocalSearchParams; hooks only go inside components; .map vs .find vs .filter; handling undefined with an early return and ?.; why signups are a separate join table (data belongs to "this player in this game").
 - Git: git detects moved files as renames once staged.
 - Next: waitlist (sorted by signup time) and "spots left" on game detail, then sign up / drop buttons with useState.
+## 2026-11-10 — Milestone 1: spots left + waitlist
+- Built: "X spots left" (capacity − confirmed) and a waitlist sorted by signup time with positions ("1. Olivia") on game detail.
+- Learned: .length is a property, not a method; .sort() with a compare function and getTime(); .sort() changes the array it's called on, so sort a filtered copy; map's index; test a sort by swapping data; name variables for what they hold.
+- Next: sign up / drop buttons with useState.
 
