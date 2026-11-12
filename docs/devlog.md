@@ -25,4 +25,9 @@ One entry per session: what I built, what I learned, what's next.
 - Built: "X spots left" (capacity − confirmed) and a waitlist sorted by signup time with positions ("1. Olivia") on game detail.
 - Learned: .length is a property, not a method; .sort() with a compare function and getTime(); .sort() changes the array it's called on, so sort a filtered copy; map's index; test a sort by swapping data; name variables for what they hold.
 - Next: sign up / drop buttons with useState.
+## 2026-11-12 — Milestone 1: state + sign up
+- Built: signups now live in useState; a Sign up button adds me as confirmed (spots open) or waitlisted (full), and hides once I'm signed up.
+- Learned: state = data a component remembers, change it with the setter and React redraws; never change state directly, copy it with [...arr, x]; onPress takes a function without (); event handlers aren't hooks so they can go after the early return; typing an object (: Signup) so status stays a valid value; read TS errors bottom-up; conditional rendering with &&.
+- Insight: state resets when you leave the screen, which is why we need a database.
+- Next: Drop button ({ ...s, status: "dropped" }) and auto-promoting the first waitlisted player.
 
