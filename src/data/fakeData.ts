@@ -31,7 +31,8 @@ export const players: Player[] = [
     {id: "p3", name: "Moris Suveyke", position: "DEF"},
     {id: "p4", name: "Ricardo Rocha", position: "MID"},
     {id: "p5", name: "Olivia Aiken", position: "MID"},
-    {id: "p6", name: "Joaquin Pereyra", position: "FWD"}
+    {id: "p6", name: "Joaquin Pereyra", position: "FWD"},
+    {id: "p7", name: "Test User", position: "FWD"}
 ];
 export const signups: Signup[] = [
     {id: "s1", gameId: "g2", playerId: "p1", status: "confirmed", createdAt: "2026-11-07T12:01:00Z"},
@@ -41,3 +42,5 @@ export const signups: Signup[] = [
     {id: "s5", gameId: "g2", playerId: "p5", status: "waitlisted", createdAt: "2026-11-07T12:05:00Z"},
     {id: "s6", gameId: "g2", playerId: "p6", status: "waitlisted", createdAt: "2026-11-07T12:06:00Z"}
 ];
+
+export const currentPlayerId = "p7";

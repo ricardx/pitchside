@@ -1,7 +1,7 @@
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import { useState } from "react";
 import { useLocalSearchParams } from "expo-router";
-import { games, signups, players } from "@/data/fakeData";
+import { games, signups, players, currentPlayerId, Signup, Game } from "@/data/fakeData";
 import formatDate from "@/utils/formatDate";
 import formatPrice from "@/utils/formatPrice";
 
@@ -18,6 +18,20 @@ export default function GameScreen() {
         .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
     const capacity = game.playersPerTeam * 2;
     const spotsLeft = capacity - confirmedSignups.length;
+    const handleSignup = () => {
+        const newSignup: Signup = {
+            id: `s${Date.now()}`,
+            gameId: game.id,
+            playerId: currentPlayerId,
+            status: spotsLeft <= 0 ? "waitlisted" : "confirmed",
+            createdAt: new Date().toISOString()
+        }
+        const updatedSignups = [...allSignups, newSignup];
+        setAllSignups(updatedSignups);
+    }
+    const currentPlayerSignup = allSignups.find((s) => (
+        s.gameId === game.id && s.playerId === currentPlayerId && s.status !== "dropped"
+    ))
     return (
         <View>
             <Text>{game.location}</Text>
@@ -40,6 +54,7 @@ export default function GameScreen() {
                     </Text>
                 ))
             }
+            {currentPlayerSignup === undefined && <Button title="Sign up" onPress={handleSignup} />}
         </View>
     )
 }
